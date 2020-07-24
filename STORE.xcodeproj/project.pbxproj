@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0A4476C634A4CA128D3666A /* Pods_STORE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9E2F62802B2DAE5B012A51 /* Pods_STORE.framework */; };
 		FAAD06C724CAD09000962FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06C624CAD09000962FC1 /* AppDelegate.swift */; };
 		FAAD06C924CAD09000962FC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06C824CAD09000962FC1 /* SceneDelegate.swift */; };
-		FAAD06CB24CAD09000962FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06CA24CAD09000962FC1 /* ViewController.swift */; };
 		FAAD06CE24CAD09000962FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD06CC24CAD09000962FC1 /* Main.storyboard */; };
 		FAAD06D024CAD09100962FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAD06CF24CAD09100962FC1 /* Assets.xcassets */; };
 		FAAD06D324CAD09100962FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD06D124CAD09100962FC1 /* LaunchScreen.storyboard */; };
+		FAAD06DD24CAD21900962FC1 /* StoreFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06DC24CAD21900962FC1 /* StoreFrontViewController.swift */; };
+		FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2EE62CFBE2D95DDDC7D7FE /* Pods-STORE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STORE.debug.xcconfig"; path = "Target Support Files/Pods-STORE/Pods-STORE.debug.xcconfig"; sourceTree = "<group>"; };
+		4C9E2F62802B2DAE5B012A51 /* Pods_STORE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STORE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7AD0845BD6E44E52CC6C2FD /* Pods-STORE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STORE.release.xcconfig"; path = "Target Support Files/Pods-STORE/Pods-STORE.release.xcconfig"; sourceTree = "<group>"; };
 		FAAD06C324CAD09000962FC1 /* STORE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STORE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAD06C624CAD09000962FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAAD06C824CAD09000962FC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAAD06CA24CAD09000962FC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAAD06CD24CAD09000962FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAAD06CF24CAD09100962FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAAD06D224CAD09100962FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAAD06D424CAD09100962FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAD06DC24CAD21900962FC1 /* StoreFrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontViewController.swift; sourceTree = "<group>"; };
+		FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEndViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A4476C634A4CA128D3666A /* Pods_STORE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A19EC1DAE5FFD5A7173DE1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C9E2F62802B2DAE5B012A51 /* Pods_STORE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAAD06BA24CAD09000962FC1 = {
 			isa = PBXGroup;
 			children = (
 				FAAD06C524CAD09000962FC1 /* STORE */,
+				FAAD06DA24CAD1CF00962FC1 /* Supporting Files */,
 				FAAD06C424CAD09000962FC1 /* Products */,
+				FC3CD1C7A93EB92AF8B421A1 /* Pods */,
+				8A19EC1DAE5FFD5A7173DE1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +74,57 @@
 		FAAD06C524CAD09000962FC1 /* STORE */ = {
 			isa = PBXGroup;
 			children = (
-				FAAD06C624CAD09000962FC1 /* AppDelegate.swift */,
-				FAAD06C824CAD09000962FC1 /* SceneDelegate.swift */,
-				FAAD06CA24CAD09000962FC1 /* ViewController.swift */,
-				FAAD06CC24CAD09000962FC1 /* Main.storyboard */,
-				FAAD06CF24CAD09100962FC1 /* Assets.xcassets */,
-				FAAD06D124CAD09100962FC1 /* LaunchScreen.storyboard */,
-				FAAD06D424CAD09100962FC1 /* Info.plist */,
+				FAAD06E124CAD24100962FC1 /* Model */,
+				FAAD06E024CAD23500962FC1 /* View */,
+				FAAD06DB24CAD1EA00962FC1 /* Controller */,
 			);
 			path = STORE;
+			sourceTree = "<group>";
+		};
+		FAAD06DA24CAD1CF00962FC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAAD06C624CAD09000962FC1 /* AppDelegate.swift */,
+				FAAD06C824CAD09000962FC1 /* SceneDelegate.swift */,
+				FAAD06D424CAD09100962FC1 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAAD06DB24CAD1EA00962FC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAAD06DC24CAD21900962FC1 /* StoreFrontViewController.swift */,
+				FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAAD06E024CAD23500962FC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAD06CC24CAD09000962FC1 /* Main.storyboard */,
+				FAAD06D124CAD09100962FC1 /* LaunchScreen.storyboard */,
+				FAAD06CF24CAD09100962FC1 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAAD06E124CAD24100962FC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC3CD1C7A93EB92AF8B421A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A2EE62CFBE2D95DDDC7D7FE /* Pods-STORE.debug.xcconfig */,
+				B7AD0845BD6E44E52CC6C2FD /* Pods-STORE.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAAD06D724CAD09100962FC1 /* Build configuration list for PBXNativeTarget "STORE" */;
 			buildPhases = (
+				12044E0CEB4D556544613329 /* [CP] Check Pods Manifest.lock */,
 				FAAD06BF24CAD09000962FC1 /* Sources */,
 				FAAD06C024CAD09000962FC1 /* Frameworks */,
 				FAAD06C124CAD09000962FC1 /* Resources */,
+				0410A74C333928406F85BFEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +195,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0410A74C333928406F85BFEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STORE/Pods-STORE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STORE/Pods-STORE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STORE/Pods-STORE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12044E0CEB4D556544613329 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STORE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAAD06BF24CAD09000962FC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAD06CB24CAD09000962FC1 /* ViewController.swift in Sources */,
 				FAAD06C724CAD09000962FC1 /* AppDelegate.swift in Sources */,
+				FAAD06DD24CAD21900962FC1 /* StoreFrontViewController.swift in Sources */,
 				FAAD06C924CAD09000962FC1 /* SceneDelegate.swift in Sources */,
+				FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +387,12 @@
 		};
 		FAAD06D824CAD09100962FC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A2EE62CFBE2D95DDDC7D7FE /* Pods-STORE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UWQ56AG86;
-				INFOPLIST_FILE = STORE/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +406,12 @@
 		};
 		FAAD06D924CAD09100962FC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7AD0845BD6E44E52CC6C2FD /* Pods-STORE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UWQ56AG86;
-				INFOPLIST_FILE = STORE/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
