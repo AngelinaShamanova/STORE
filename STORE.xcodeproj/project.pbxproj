@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		FAAD06D324CAD09100962FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAD06D124CAD09100962FC1 /* LaunchScreen.storyboard */; };
 		FAAD06DD24CAD21900962FC1 /* StoreFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06DC24CAD21900962FC1 /* StoreFrontViewController.swift */; };
 		FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */; };
+		FAAD06E524CADAC100962FC1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06E424CADAC100962FC1 /* StorageManager.swift */; };
+		FAAD06E924CAF2E300962FC1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06E824CAF2E300962FC1 /* Product.swift */; };
+		FAAD06F124CB1F1000962FC1 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06F024CB1F1000962FC1 /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		FAAD06D424CAD09100962FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAD06DC24CAD21900962FC1 /* StoreFrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFrontViewController.swift; sourceTree = "<group>"; };
 		FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEndViewController.swift; sourceTree = "<group>"; };
+		FAAD06E424CADAC100962FC1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FAAD06E824CAF2E300962FC1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FAAD06F024CB1F1000962FC1 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,9 @@
 		FAAD06E124CAD24100962FC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAAD06E824CAF2E300962FC1 /* Product.swift */,
+				FAAD06F024CB1F1000962FC1 /* ProductCell.swift */,
+				FAAD06E424CADAC100962FC1 /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,7 +132,6 @@
 				3A2EE62CFBE2D95DDDC7D7FE /* Pods-STORE.debug.xcconfig */,
 				B7AD0845BD6E44E52CC6C2FD /* Pods-STORE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,6 +253,9 @@
 				FAAD06C724CAD09000962FC1 /* AppDelegate.swift in Sources */,
 				FAAD06DD24CAD21900962FC1 /* StoreFrontViewController.swift in Sources */,
 				FAAD06C924CAD09000962FC1 /* SceneDelegate.swift in Sources */,
+				FAAD06E524CADAC100962FC1 /* StorageManager.swift in Sources */,
+				FAAD06E924CAF2E300962FC1 /* Product.swift in Sources */,
+				FAAD06F124CB1F1000962FC1 /* ProductCell.swift in Sources */,
 				FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

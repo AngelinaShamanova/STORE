@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--STORE-FRONT-->
+        <!--FRONT-STORE-->
         <scene sceneID="lhZ-GJ-P8Q">
             <objects>
                 <collectionViewController id="FIv-1G-Bzw" customClass="StoreFrontViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ScZ-RT-2c4">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ScZ-RT-2c4">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cJO-f4-chq">
@@ -36,12 +36,11 @@
                             <outlet property="delegate" destination="FIv-1G-Bzw" id="JOm-Sv-KwN"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="STORE-FRONT" image="circle" catalog="system" id="Fd8-RV-EeZ"/>
-                    <navigationItem key="navigationItem" id="uq2-Sd-Ghs"/>
+                    <navigationItem key="navigationItem" title="FRONT-STORE" id="uq2-Sd-Ghs"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4N-m4-IGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325" y="100"/>
+            <point key="canvasLocation" x="1984" y="100"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JgT-Kp-PvA">
@@ -57,8 +56,8 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FIv-1G-Bzw" kind="relationship" relationship="viewControllers" id="5lg-C3-UNj"/>
-                        <segue destination="8xw-K1-lFl" kind="relationship" relationship="viewControllers" id="HgE-Jx-0re"/>
+                        <segue destination="SyC-fH-Uon" kind="relationship" relationship="viewControllers" id="5lg-C3-UNj"/>
+                        <segue destination="ydy-lu-hit" kind="relationship" relationship="viewControllers" id="HgE-Jx-0re"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mB-8A-ryp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,13 +74,48 @@
                         <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KNw-wG-X8d">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="150" id="KNw-wG-X8d" customClass="ProductCell" customModule="STORE" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KNw-wG-X8d" id="EyO-El-Tgd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HOI-pR-jpX">
+                                            <rect key="frame" x="40" y="23" width="334" height="87.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPa-yC-REC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yG-te-4sJ">
+                                                    <rect key="frame" x="0.0" y="31.5" width="334" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3T-Qw-umA">
+                                                    <rect key="frame" x="0.0" y="64" width="334" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HOI-pR-jpX" firstAttribute="top" secondItem="EyO-El-Tgd" secondAttribute="topMargin" constant="12" id="at7-zy-KdH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="HOI-pR-jpX" secondAttribute="trailing" constant="20" id="gy2-w2-HRw"/>
+                                        <constraint firstItem="HOI-pR-jpX" firstAttribute="leading" secondItem="EyO-El-Tgd" secondAttribute="leadingMargin" constant="20" id="rEj-po-0ex"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="YPa-yC-REC" id="p9F-Kb-csV"/>
+                                    <outlet property="price" destination="5yG-te-4sJ" id="z6J-Xx-9De"/>
+                                    <outlet property="quantity" destination="n3T-Qw-umA" id="9Dt-5v-9Df"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,14 +123,66 @@
                             <outlet property="delegate" destination="8xw-K1-lFl" id="j3r-Wx-J3E"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="BACK-END" image="circle" catalog="system" id="Rzb-Uj-K4D"/>
+                    <navigationItem key="navigationItem" title="BACK-END" id="sUK-EN-jfp">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Sxq-WA-3mO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="8xw-K1-lFl" id="HLR-Rf-Bky"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rx-bc-rSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="813"/>
+            <point key="canvasLocation" x="1192.753623188406" y="812.94642857142856"/>
+        </scene>
+        <!--STORE-FRONT-->
+        <scene sceneID="oHJ-22-LSR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SyC-fH-Uon" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="STORE-FRONT" image="circle" catalog="system" id="Fd8-RV-EeZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PX4-z0-brC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FIv-1G-Bzw" kind="relationship" relationship="rootViewController" id="Q7g-i1-Ckm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ngh-j5-Nrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="100"/>
+        </scene>
+        <!--BACK-END-->
+        <scene sceneID="tc9-Rs-LZb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ydy-lu-hit" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="BACK-END" image="circle" catalog="system" id="Rzb-Uj-K4D"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FTp-y1-QyG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8xw-K1-lFl" kind="relationship" relationship="rootViewController" id="RuB-Tj-lFT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dJ-AC-YZ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.00000000000006" y="812.94642857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="circle" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
