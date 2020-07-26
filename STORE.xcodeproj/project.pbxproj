@@ -17,7 +17,9 @@
 		FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */; };
 		FAAD06E524CADAC100962FC1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06E424CADAC100962FC1 /* StorageManager.swift */; };
 		FAAD06E924CAF2E300962FC1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06E824CAF2E300962FC1 /* Product.swift */; };
-		FAAD06F124CB1F1000962FC1 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06F024CB1F1000962FC1 /* ProductCell.swift */; };
+		FAAD06F124CB1F1000962FC1 /* BackendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06F024CB1F1000962FC1 /* BackendCell.swift */; };
+		FAAD06FE24CC718600962FC1 /* StorefrontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD06FC24CC718600962FC1 /* StorefrontCell.swift */; };
+		FAAD06FF24CC718600962FC1 /* StorefrontCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAD06FD24CC718600962FC1 /* StorefrontCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,9 @@
 		FAAD06DE24CAD22C00962FC1 /* BackEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEndViewController.swift; sourceTree = "<group>"; };
 		FAAD06E424CADAC100962FC1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FAAD06E824CAF2E300962FC1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		FAAD06F024CB1F1000962FC1 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		FAAD06F024CB1F1000962FC1 /* BackendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendCell.swift; sourceTree = "<group>"; };
+		FAAD06FC24CC718600962FC1 /* StorefrontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontCell.swift; sourceTree = "<group>"; };
+		FAAD06FD24CC718600962FC1 /* StorefrontCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorefrontCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				FAAD06E824CAF2E300962FC1 /* Product.swift */,
-				FAAD06F024CB1F1000962FC1 /* ProductCell.swift */,
 				FAAD06E424CADAC100962FC1 /* StorageManager.swift */,
+				FAAD06F024CB1F1000962FC1 /* BackendCell.swift */,
+				FAAD06FC24CC718600962FC1 /* StorefrontCell.swift */,
+				FAAD06FD24CC718600962FC1 /* StorefrontCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAD06D324CAD09100962FC1 /* LaunchScreen.storyboard in Resources */,
+				FAAD06FF24CC718600962FC1 /* StorefrontCell.xib in Resources */,
 				FAAD06D024CAD09100962FC1 /* Assets.xcassets in Resources */,
 				FAAD06CE24CAD09000962FC1 /* Main.storyboard in Resources */,
 			);
@@ -255,7 +262,8 @@
 				FAAD06C924CAD09000962FC1 /* SceneDelegate.swift in Sources */,
 				FAAD06E524CADAC100962FC1 /* StorageManager.swift in Sources */,
 				FAAD06E924CAF2E300962FC1 /* Product.swift in Sources */,
-				FAAD06F124CB1F1000962FC1 /* ProductCell.swift in Sources */,
+				FAAD06FE24CC718600962FC1 /* StorefrontCell.swift in Sources */,
+				FAAD06F124CB1F1000962FC1 /* BackendCell.swift in Sources */,
 				FAAD06DF24CAD22C00962FC1 /* BackEndViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

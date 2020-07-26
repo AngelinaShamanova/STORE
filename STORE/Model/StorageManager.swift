@@ -25,10 +25,15 @@ class StorageManager {
         }
     }
     
-    static func edit(_ product: Product, newName: String, newPrice: String, newQuantity: String) {
+    static func edit(_ product: Product, newName: String, newPrice: String, newQuantity: Int) {
         try! realm.write {
             product.name = newName
             product.price = newPrice
+            product.quantity = newQuantity
+        }
+    }
+    static func editQuantity(_ product: Product, newQuantity: Int) {
+        try! realm.write {
             product.quantity = newQuantity
         }
     }

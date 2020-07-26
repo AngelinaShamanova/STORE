@@ -12,7 +12,7 @@ import RealmSwift
 class BackEndViewController: UITableViewController {
     
     // MARK: - Public Properties
-    var productsDetail: Results<Product>!
+    var product: Results<Product>!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,7 +21,7 @@ class BackEndViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        productsDetail = realm.objects(Product.self)
+        product = realm.objects(Product.self)
     }
     
     @IBAction func  addButtonPressed(_ sender: Any) {
@@ -30,14 +30,14 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsDetail.count
+        return product.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BackendCell", for: indexPath) as! BackendCell
         
-        let productInfo = productsDetail[indexPath.row]
+        let productInfo = product[indexPath.row]
         cell.configure(with: productInfo)
         
         return cell
@@ -50,9 +50,10 @@ class BackEndViewController: UITableViewController {
     }
     
     // MARK: - Swipe Actions
+    
     func editAction(at indexPath: IndexPath) -> UIContextualAction {
         
-        let products = productsDetail[indexPath.row]
+        let products = product[indexPath.row]
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
             self.alerForAddAndUpdateList(products, completion: {
@@ -62,8 +63,9 @@ class BackEndViewController: UITableViewController {
         }
         return editAction
     }
+    
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let products = productsDetail[indexPath.row]
+        let products = product[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
             StorageManager.delete(products)
@@ -90,7 +92,7 @@ extension BackEndViewController {
         var doneButton = "Сохранить"
         
         if productName != nil {
-            title = "Редактировать"
+            title = "Редактирование информации"
             doneButton = "Обновить"
         }
         
@@ -103,19 +105,18 @@ extension BackEndViewController {
             guard let newName = nameTextField.text, !newName.isEmpty, let newPrice = priceTextField.text, !newPrice.isEmpty, let newQuantity = quantityTextField.text, !newQuantity.isEmpty else { return }
             
             if let productName = productName {
-                StorageManager.edit(productName, newName: newName, newPrice: newPrice, newQuantity: newQuantity)
+                StorageManager.edit(productName, newName: newName, newPrice: newPrice, newQuantity: Int(newQuantity) ?? 0)
                 if completion != nil { completion!() }
             } else {
                 
                 let productsList = Product()
                 productsList.name = newName
                 productsList.price = newPrice
-                productsList.quantity = newQuantity
+                productsList.quantity = Int(newQuantity) ?? 0
                 
                 StorageManager.save(productsList)
                 
-                self.tableView.insertRows(at: [IndexPath(
-                    row: self.productsDetail.count - 1, section: 0)], with: .automatic
+                self.tableView.insertRows(at: [IndexPath(row: self.product.count - 1, section: 0)], with: .automatic
                 )
             }
             
@@ -144,7 +145,7 @@ extension BackEndViewController {
         if let productsName = productName {
             nameTextField.text = productsName.name
             priceTextField.text = productsName.price
-            quantityTextField.text = productsName.quantity
+            quantityTextField.text = "\(productsName.quantity)"
         }
         
         present(alert, animated: true)

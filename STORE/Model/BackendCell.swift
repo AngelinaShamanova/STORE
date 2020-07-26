@@ -1,5 +1,5 @@
 //
-//  ProductCell.swift
+//  BackendCell.swift
 //  STORE
 //
 //  Created by MacBook on 24/07/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCell: UITableViewCell {
+class BackendCell: UITableViewCell {
 
     @IBOutlet var name: UILabel!
     @IBOutlet var price: UILabel!

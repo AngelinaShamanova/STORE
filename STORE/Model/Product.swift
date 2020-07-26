@@ -12,6 +12,6 @@ class Product: Object {
     
     @objc dynamic var name = ""
     @objc dynamic var price = ""
-    @objc dynamic var quantity = ""
+    @objc dynamic var quantity = 0
     
 }
