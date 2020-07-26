@@ -22,7 +22,7 @@ class StorefrontCell: UICollectionViewCell {
         quantity.text = "Количество: \(productList.quantity)"
     }
     
-    func configureDeleteCell(with productList: Product) {
+    func configureNotAvailableProduct(with productList: Product) {
         buy.isHidden = true
         name.text = "Наименование товара: \(productList.name)"
         price.text = "Цена: \(productList.price)"

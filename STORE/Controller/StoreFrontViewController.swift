@@ -39,7 +39,7 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
         if productInfo.quantity != 0 {
             cell.configure(with: productInfo)
         } else {
-            cell.configureDeleteCell(with: productInfo)
+            cell.configureNotAvailableProduct(with: productInfo)
         }
         return cell
     }
