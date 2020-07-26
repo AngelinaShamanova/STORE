@@ -23,6 +23,7 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
         super.viewDidLoad()
         product = realm.objects(Product.self)
         self.collectionView.register(UINib(nibName: "StorefrontCell", bundle: nil), forCellWithReuseIdentifier: "StorefrontCell")
+        
     }
     
     // MARK: UICollectionViewDataSource
@@ -44,12 +45,10 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
         return cell
     }
     
-
-
-        // MARK: UICollectionViewDelegate
-        
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
-        }
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.width)
     }
+}
 

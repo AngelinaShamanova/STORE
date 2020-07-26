@@ -16,23 +16,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="va9-Zl-Vyk">
-                        <rect key="frame" x="10" y="93" width="394" height="158.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="va9-Zl-Vyk">
+                        <rect key="frame" x="5" y="93" width="404" height="168.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4y-hn-r1l">
-                                <rect key="frame" x="0.0" y="0.0" width="394" height="29.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="404" height="29.5"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvX-24-H3w">
-                                <rect key="frame" x="0.0" y="64.5" width="394" height="29.5"/>
+                                <rect key="frame" x="0.0" y="69.5" width="404" height="29.5"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-u9-HLy">
-                                <rect key="frame" x="0.0" y="129" width="394" height="29.5"/>
+                                <rect key="frame" x="0.0" y="139" width="404" height="29.5"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,34 +40,31 @@
                         </subviews>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6f-ds-qxc">
-                        <rect key="frame" x="109" y="327" width="196" height="42"/>
+                        <rect key="frame" x="109" y="311.5" width="196" height="42"/>
                         <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="196" id="309-Rg-j8R"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                         <state key="normal" title="Купить">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
-                            <action selector="buyAction:with:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TEQ-py-68Q"/>
+                            <action selector="buyAction:with:" destination="gTV-IL-0wX" eventType="touchUpInside" id="PlI-BH-moq"/>
                         </connections>
                     </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="c6f-ds-qxc" secondAttribute="trailing" constant="109" id="N7F-Lm-SkF"/>
-                <constraint firstItem="va9-Zl-Vyk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Nv3-J5-Rfg"/>
+                <constraint firstItem="c6f-ds-qxc" firstAttribute="top" secondItem="va9-Zl-Vyk" secondAttribute="bottom" constant="50" id="0QT-aD-ytc"/>
+                <constraint firstItem="va9-Zl-Vyk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Dbh-vr-A40"/>
+                <constraint firstItem="c6f-ds-qxc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="109" id="NKa-fa-4Oa"/>
+                <constraint firstAttribute="trailing" secondItem="c6f-ds-qxc" secondAttribute="trailing" constant="109" id="PYA-fb-HQM"/>
                 <constraint firstItem="va9-Zl-Vyk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="93" id="TG3-QV-zBN"/>
-                <constraint firstItem="c6f-ds-qxc" firstAttribute="top" secondItem="va9-Zl-Vyk" secondAttribute="bottom" constant="75.5" id="gEa-oO-C8t"/>
-                <constraint firstAttribute="trailing" secondItem="va9-Zl-Vyk" secondAttribute="trailingMargin" constant="10" id="hpt-9d-zlD"/>
-                <constraint firstItem="c6f-ds-qxc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="109" id="zsN-oL-4sb"/>
+                <constraint firstAttribute="trailing" secondItem="va9-Zl-Vyk" secondAttribute="trailing" constant="5" id="Z51-Il-v1s"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="244" height="190"/>
             <connections>
-                <outlet property="buy" destination="c6f-ds-qxc" id="9Gf-P2-L0Z"/>
+                <outlet property="buy" destination="c6f-ds-qxc" id="nOB-SH-eBC"/>
                 <outlet property="name" destination="v4y-hn-r1l" id="Aq4-yr-DDB"/>
                 <outlet property="price" destination="NvX-24-H3w" id="9TY-6D-hID"/>
                 <outlet property="quantity" destination="cCh-u9-HLy" id="zV9-2j-6rF"/>
