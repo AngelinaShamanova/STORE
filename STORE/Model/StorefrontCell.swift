@@ -32,8 +32,4 @@ class StorefrontCell: UICollectionViewCell {
         price.text = "Цена: \(productList.price)"
         quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
     }
-    
-    @IBAction func buyAction(_ sender: UIButton, at indexPath: IndexPath) {
-       
-    }
 }

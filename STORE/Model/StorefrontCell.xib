@@ -46,9 +46,6 @@
                         <state key="normal" title="Купить">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
-                        <connections>
-                            <action selector="buyAction:with:" destination="gTV-IL-0wX" eventType="touchUpInside" id="PlI-BH-moq"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>
