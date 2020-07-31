@@ -25,7 +25,7 @@ class BackEndViewController: UITableViewController {
     }
     
     @IBAction func  addButtonPressed(_ sender: Any) {
-        alerForAddAndUpdateList()
+        alertForAddAndUpdateProduct()
     }
     
     // MARK: - Table view data source
@@ -56,7 +56,7 @@ class BackEndViewController: UITableViewController {
         let products = product[indexPath.row]
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
-            self.alerForAddAndUpdateList(products, completion: {
+            self.alertForAddAndUpdateProduct(products, completion: {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             })
             
@@ -86,7 +86,7 @@ class BackEndViewController: UITableViewController {
 // MARK: - Extension
 extension BackEndViewController {
     
-    private func alerForAddAndUpdateList(_ productName: Product? = nil, completion: (() -> Void)? = nil) {
+    private func alertForAddAndUpdateProduct(_ productName: Product? = nil, completion: (() -> Void)? = nil) {
         
         var title = "Новый товар"
         var doneButton = "Сохранить"

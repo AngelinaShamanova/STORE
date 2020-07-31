@@ -46,6 +46,9 @@
                         <state key="normal" title="Купить">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="buyAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="UPq-tw-9Pl"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -61,7 +64,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="244" height="190"/>
             <connections>
-                <outlet property="buy" destination="c6f-ds-qxc" id="nOB-SH-eBC"/>
+                <outlet property="buy" destination="c6f-ds-qxc" id="JbZ-ER-tv8"/>
                 <outlet property="name" destination="v4y-hn-r1l" id="Aq4-yr-DDB"/>
                 <outlet property="price" destination="NvX-24-H3w" id="9TY-6D-hID"/>
                 <outlet property="quantity" destination="cCh-u9-HLy" id="zV9-2j-6rF"/>

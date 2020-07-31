@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class StorefrontCell: UICollectionViewCell {
     
     var product: Results<Product>!
@@ -17,7 +18,7 @@ class StorefrontCell: UICollectionViewCell {
     @IBOutlet var price: UILabel!
     @IBOutlet var quantity: UILabel!
     @IBOutlet var buy: UIButton!
-
+    
     func configure(with productList: Product) {
         buy.layer.cornerRadius = 10
         buy.isHidden = false 
@@ -31,5 +32,25 @@ class StorefrontCell: UICollectionViewCell {
         name.text = "Наименование товара: \(productList.name)"
         price.text = "Цена: \(productList.price)"
         quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
+    }
+    
+    @IBAction func buyAction(_ sender: UIButton) {
+        
+        let results = realm.objects(Product.self)
+        
+        for product in results {
+            
+            let newQt = product.quantity - 1
+            quantity.text = "Количество: \(newQt)"
+            
+            try! realm.write {
+                product.quantity = newQt
+            }
+            
+            if product.quantity == 0 {
+                buy.isHidden = true
+                quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
+            } else { return }
+        }
     }
 }
