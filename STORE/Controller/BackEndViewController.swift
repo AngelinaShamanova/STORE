@@ -13,6 +13,7 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Public Properties
     var product: Results<Product>!
+    var products: ProductInformation? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,6 +33,7 @@ class BackEndViewController: UITableViewController {
                 print(data)
             }
         }
+        tableView.reloadData()
     }
     
     @IBAction func  addButtonPressed(_ sender: Any) {
@@ -40,15 +42,19 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return product.count
+//        return product.count
+        return products?.productInfo.count ?? 0
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BackendCell", for: indexPath) as! BackendCell
         
-        let productInfo = product[indexPath.row]
-        cell.configure(with: productInfo)
+        guard let prodInfo = products?.productInfo[indexPath.row] else { return cell }
+        cell.configureCell(with: prodInfo)
+        
+        //        let productInfo = product[indexPath.row]
+        //        cell.configure(with: productInfo)
         
         return cell
     }
@@ -93,22 +99,6 @@ class BackEndViewController: UITableViewController {
     }
     
     // MARK: - Work with JSON
-    
-    //    var productsInfo = [ProductInfo]()
-    //
-    //    func parseJSON(data: Data){
-    //
-    //        if Bundle.main.path(forResource: "data", ofType: "json") != nil {
-    //
-    //            do {
-    //                let decoder = JSONDecoder()
-    //                self.productsInfo = try decoder.decode([ProductInfo].self, from: data)
-    //                print(productsInfo)
-    //            } catch  {
-    //                print(error.localizedDescription)
-    //            }
-    //        }
-    //    }
     
     func decode(data: Data) throws -> ProductInformation? {
         do {

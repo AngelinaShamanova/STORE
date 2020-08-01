@@ -127,13 +127,13 @@
 		FAAD06E124CAD24100962FC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA99949924D60FB900398A0E /* data.json */,
-				FAAD06E824CAF2E300962FC1 /* Product.swift */,
-				FAAD06E424CADAC100962FC1 /* StorageManager.swift */,
-				FA99949724D6048D00398A0E /* DataJson.swift */,
 				FAAD06FC24CC718600962FC1 /* StorefrontCell.swift */,
 				FAAD06FD24CC718600962FC1 /* StorefrontCell.xib */,
 				FAAD06F024CB1F1000962FC1 /* BackendCell.swift */,
+				FAAD06E424CADAC100962FC1 /* StorageManager.swift */,
+				FAAD06E824CAF2E300962FC1 /* Product.swift */,
+				FA99949724D6048D00398A0E /* DataJson.swift */,
+				FA99949924D60FB900398A0E /* data.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
