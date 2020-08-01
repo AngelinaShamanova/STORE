@@ -22,6 +22,16 @@ class BackEndViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         product = realm.objects(Product.self)
+        
+        // We can decode a User from a json document
+        if let productInfo = loadProducts() {
+            print(productInfo.productInfo)
+            
+            // We can encode the user
+            if let data = encode(productInfo: productInfo) {
+                print(data)
+            }
+        }
     }
     
     @IBAction func  addButtonPressed(_ sender: Any) {
@@ -81,6 +91,65 @@ class BackEndViewController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: [delete, edit])
     }
+    
+    // MARK: - Work with JSON
+    
+    //    var productsInfo = [ProductInfo]()
+    //
+    //    func parseJSON(data: Data){
+    //
+    //        if Bundle.main.path(forResource: "data", ofType: "json") != nil {
+    //
+    //            do {
+    //                let decoder = JSONDecoder()
+    //                self.productsInfo = try decoder.decode([ProductInfo].self, from: data)
+    //                print(productsInfo)
+    //            } catch  {
+    //                print(error.localizedDescription)
+    //            }
+    //        }
+    //    }
+    
+    func decode(data: Data) throws -> ProductInformation? {
+        do {
+            let decoder = JSONDecoder()
+            let info = try decoder.decode(ProductInformation.self, from: data)
+            return info
+        } catch let error {
+            print(error)
+            return nil
+        }
+    }
+    
+    func encode(productInfo: ProductInformation) -> Data? {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(productInfo)
+            return data
+        } catch let error {
+            print(error)
+            return nil
+        }
+    }
+    
+    func loadProducts() -> ProductInformation? {
+        guard let fileURL = Bundle.main.url(forResource: "data", withExtension: "json") else {
+            print("couldn't find the file")
+            return nil
+        }
+        
+        do {
+            let content = try Data(contentsOf: fileURL)
+            let productInfooo = try decode(data: content)
+            return productInfooo
+            
+        } catch let error {
+            print(error)
+            return nil
+        }
+        
+    }
+    
 }
 
 // MARK: - Extension
@@ -150,6 +219,6 @@ extension BackEndViewController {
         
         present(alert, animated: true)
     }
-    
 }
+
 
