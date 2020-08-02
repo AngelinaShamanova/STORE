@@ -14,11 +14,11 @@ class BackendCell: UITableViewCell {
     @IBOutlet var price: UILabel!
     @IBOutlet var quantity: UILabel!
     
-//    func configure(with productList: Product) {
-//        name.text = "Наименование товара: \(productList.name)"
-//        price.text = "Цена: \(productList.price)"
-//        quantity.text = "Количество: \(productList.quantity)"
-//    }
+    func configure(with productList: Product) {
+        name.text = "Наименование товара: \(productList.name)"
+        price.text = "Цена: \(productList.price)"
+        quantity.text = "Количество: \(productList.quantity)"
+    }
 
     
     func configureCell(with products: ProductInfo) {

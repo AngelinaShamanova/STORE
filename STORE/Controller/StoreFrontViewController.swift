@@ -13,6 +13,9 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     
     var products: Product!
     var product: Results<Product>!
+    var storageManager = StorageManager()
+    var productsInfo: ProductInformation? = nil
+    let jsonService = JsonService()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,14 +37,17 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorefrontCell", for: indexPath) as! StorefrontCell
-    
+        
         let productInfo = product[indexPath.item]
         
-//        if productInfo.quantity != 0 {
-//            cell.configure(with: productInfo)
-//        } else {
-//            cell.configureNotAvailableProduct(with: productInfo)
-//        }
+        DispatchQueue.main.async {
+            if productInfo.quantity != 0 {
+                cell.configure(with: productInfo)
+            } else {
+                cell.configureNotAvailableProduct(with: productInfo)
+            }
+        }
+        
         return cell
     }
     
@@ -50,5 +56,4 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.width)
     }
-    
 }

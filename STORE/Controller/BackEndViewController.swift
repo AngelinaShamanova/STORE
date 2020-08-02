@@ -14,26 +14,17 @@ class BackEndViewController: UITableViewController {
     // MARK: - Public Properties
     var product: Results<Product>!
     var products: ProductInformation? = nil
+    let jsonService = JsonService()
+    let storageManager = StorageManager()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        fetchData("data", "json")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         product = realm.objects(Product.self)
-        
-        // We can decode a User from a json document
-        if let productInfo = loadProducts() {
-            print(productInfo.productInfo)
-            
-            // We can encode the user
-            if let data = encode(productInfo: productInfo) {
-                print(data)
-            }
-        }
-        tableView.reloadData()
     }
     
     @IBAction func  addButtonPressed(_ sender: Any) {
@@ -42,7 +33,7 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return product.count
+        //        return product.count
         return products?.productInfo.count ?? 0
     }
     
@@ -50,11 +41,10 @@ class BackEndViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BackendCell", for: indexPath) as! BackendCell
         
-        guard let prodInfo = products?.productInfo[indexPath.row] else { return cell }
-        cell.configureCell(with: prodInfo)
+        saveDataToRealm(productJson: products!, at: indexPath)
         
-        //        let productInfo = product[indexPath.row]
-        //        cell.configure(with: productInfo)
+        let productInfo = product[indexPath.row]
+        cell.configure(with: productInfo)
         
         return cell
     }
@@ -98,47 +88,29 @@ class BackEndViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [delete, edit])
     }
     
-    // MARK: - Work with JSON
+    // MARK: - Fetch data
     
-    func decode(data: Data) throws -> ProductInformation? {
-        do {
-            let decoder = JSONDecoder()
-            let info = try decoder.decode(ProductInformation.self, from: data)
-            return info
-        } catch let error {
-            print(error)
-            return nil
-        }
+    func fetchData(_ forResource: String, _ withExtension: String) {
+        self.jsonService.request(forResource, withExtension, completion: { [weak self] (prods, error) in
+            prods?.productInfo.map({ (prod) in
+                self?.products = prods
+                self?.tableView.reloadData()
+            })
+        })
     }
     
-    func encode(productInfo: ProductInformation) -> Data? {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(productInfo)
-            return data
-        } catch let error {
-            print(error)
-            return nil
-        }
-    }
-    
-    func loadProducts() -> ProductInformation? {
-        guard let fileURL = Bundle.main.url(forResource: "data", withExtension: "json") else {
-            print("couldn't find the file")
-            return nil
-        }
-        
-        do {
-            let content = try Data(contentsOf: fileURL)
-            let productInfooo = try decode(data: content)
-            return productInfooo
-            
-        } catch let error {
-            print(error)
-            return nil
-        }
-        
-    }
+    func saveDataToRealm(productJson: ProductInformation, at indexPath: IndexPath) {
+         
+         try! realm.write {
+             let productsRealm = Product()
+             
+             productsRealm.name = productJson.productInfo[indexPath.row].name
+             productsRealm.price = productJson.productInfo[indexPath.row].price
+             productsRealm.quantity = productJson.productInfo[indexPath.row].quantity
+             
+             realm.add(productsRealm)
+         }
+     }
     
 }
 

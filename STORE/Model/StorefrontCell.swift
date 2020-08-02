@@ -47,10 +47,10 @@ class StorefrontCell: UICollectionViewCell {
                 product.quantity = newQt
             }
             
-            if product.quantity == 0 {
-                buy.isHidden = true
-                quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
-            } else { return }
-        }
+                if product.quantity == 0 {
+                    self.buy.isHidden = true
+                    self.quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
+                } else { return }
+            }
     }
 }
