@@ -33,15 +33,12 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        return product.count
-        return products?.productInfo.count ?? 0
+        return product.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BackendCell", for: indexPath) as! BackendCell
-        
-        saveDataToRealm(productJson: products!, at: indexPath)
         
         let productInfo = product[indexPath.row]
         cell.configure(with: productInfo)
@@ -98,19 +95,6 @@ class BackEndViewController: UITableViewController {
             })
         })
     }
-    
-    func saveDataToRealm(productJson: ProductInformation, at indexPath: IndexPath) {
-         
-         try! realm.write {
-             let productsRealm = Product()
-             
-             productsRealm.name = productJson.productInfo[indexPath.row].name
-             productsRealm.price = productJson.productInfo[indexPath.row].price
-             productsRealm.quantity = productJson.productInfo[indexPath.row].quantity
-             
-             realm.add(productsRealm)
-         }
-     }
     
 }
 

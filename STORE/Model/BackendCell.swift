@@ -20,11 +20,11 @@ class BackendCell: UITableViewCell {
         quantity.text = "Количество: \(productList.quantity)"
     }
 
-    
-    func configureCell(with products: ProductInfo) {
-        name.text = "Наименование товара: \(products.name)"
-        price.text = "Цена: \(products.price)"
-        quantity.text = "Количество: \(products.quantity)"
-    }
-    
+//    
+//    func configureCell(with products: ProductInfo) {
+//        name.text = "Наименование товара: \(products.name)"
+//        price.text = "Цена: \(products.price)"
+//        quantity.text = "Количество: \(products.quantity)"
+//    }
+//    
 }

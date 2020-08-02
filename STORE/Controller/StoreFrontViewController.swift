@@ -11,15 +11,14 @@ import RealmSwift
 
 class StoreFrontViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var products: Product!
     var product: Results<Product>!
-    var storageManager = StorageManager()
-    var productsInfo: ProductInformation? = nil
+    var products: ProductInformation? = nil
     let jsonService = JsonService()
+     var storageManager = StorageManager()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        fetchData("data", "json")
     }
     
     override func viewDidLoad() {
@@ -32,21 +31,22 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return product.count
+        return products?.productInfo.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorefrontCell", for: indexPath) as! StorefrontCell
         
-        let productInfo = product[indexPath.item]
+        saveDataToRealm(productJson: products!, at: indexPath)
         
-        DispatchQueue.main.async {
+        let productInfo = product[indexPath.item]
+    
             if productInfo.quantity != 0 {
                 cell.configure(with: productInfo)
             } else {
                 cell.configureNotAvailableProduct(with: productInfo)
             }
-        }
+        
         
         return cell
     }
@@ -55,5 +55,27 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.width)
+    }
+    
+    func saveDataToRealm(productJson: ProductInformation, at indexPath: IndexPath) {
+         
+         try! realm.write {
+             let productsRealm = Product()
+             
+            productsRealm.name = productJson.productInfo[indexPath.row].name
+            productsRealm.price = productJson.productInfo[indexPath.row].price
+            productsRealm.quantity = productJson.productInfo[indexPath.row].quantity
+             
+             realm.add(productsRealm)
+         }
+     }
+    
+    func fetchData(_ forResource: String, _ withExtension: String) {
+        self.jsonService.request(forResource, withExtension, completion: { [weak self] (prods, error) in
+            prods.map({ (prod) in
+                self?.products = prods
+                self?.collectionView.reloadData()
+            })
+        })
     }
 }
