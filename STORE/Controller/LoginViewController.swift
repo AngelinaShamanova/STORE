@@ -21,8 +21,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 15
-        let data = DataLoader().productInformation
-        print(data.count)
     }
     
     // MARK: Navigation

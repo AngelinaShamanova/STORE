@@ -47,10 +47,8 @@ class StorefrontCell: UICollectionViewCell {
             try! realm.write {
                 product.quantity = newQt
             }
-            
                 if product.quantity == 0 {
                     self.buy.isHidden = true
-                    self.reloadInputViews()
                     self.quantity.text = "ТОВАРА НЕТ В НАЛИЧИИ"
                 } else { return }
             }
