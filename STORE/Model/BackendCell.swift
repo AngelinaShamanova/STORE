@@ -18,13 +18,5 @@ class BackendCell: UITableViewCell {
         name.text = "Наименование товара: \(productList.name)"
         price.text = "Цена: \(productList.price)"
         quantity.text = "Количество: \(productList.quantity)"
-    }
-
-//    
-//    func configureCell(with products: ProductInfo) {
-//        name.text = "Наименование товара: \(products.name)"
-//        price.text = "Цена: \(products.price)"
-//        quantity.text = "Количество: \(products.quantity)"
-//    }
-//    
+    }    
 }

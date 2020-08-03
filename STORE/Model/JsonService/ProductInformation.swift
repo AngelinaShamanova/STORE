@@ -1,5 +1,5 @@
 //
-//  DataJson.swift
+//  ProductInformation.swift
 //  STORE
 //
 //  Created by MacBook on 01.08.2020.
@@ -8,11 +8,7 @@
 
 import Foundation
 
-struct ProductInformation: Decodable, Encodable {
-    let productInfo: [ProductInfo]
-}
-
-struct ProductInfo: Decodable, Encodable {
+struct ProductInformation: Codable {
     let name: String
     let price: String
     let quantity: Int

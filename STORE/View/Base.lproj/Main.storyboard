@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bi4-Dk-s2b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aK6-NJ-gOH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,7 +12,7 @@
             <objects>
                 <collectionViewController id="FIv-1G-Bzw" customClass="StoreFrontViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="kA5-Pq-dFY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cC0-oL-Hxa">
@@ -42,11 +43,104 @@
             </objects>
             <point key="canvasLocation" x="1982.608695652174" y="99.776785714285708"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Nr3-7f-bAK">
+            <objects>
+                <viewController id="aK6-NJ-gOH" customClass="LoginViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jwl-Vw-fOA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-UR-ka1">
+                                <rect key="frame" x="20" y="315" width="374" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfj-5D-ltt">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="65U-aO-aRC">
+                                        <rect key="frame" x="0.0" y="64" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-j0-LLr">
+                                <rect key="frame" x="170" y="453" width="74" height="36"/>
+                                <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInPressed" destination="aK6-NJ-gOH" eventType="touchUpInside" id="oq8-ck-g5j"/>
+                                    <segue destination="bi4-Dk-s2b" kind="show" identifier="logIn" id="MSS-g3-d0N"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-Ih-hxF">
+                                <rect key="frame" x="20" y="511" width="364" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoM-sG-ogL">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
+                                        <state key="normal" title="Forgot User Name?">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forgotUserNamePressed" destination="aK6-NJ-gOH" eventType="touchUpInside" id="XGU-At-5pR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3em-Ud-q1V">
+                                        <rect key="frame" x="241" y="0.0" width="123" height="30"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forgotPasswordPressed" destination="aK6-NJ-gOH" eventType="touchUpInside" id="TPx-Fi-AkR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Into Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrP-v0-9hu">
+                                <rect key="frame" x="20" y="144" width="374" height="35"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gcx-UR-ka1" firstAttribute="top" secondItem="wus-ix-Mgf" secondAttribute="top" constant="271" id="012-mV-DqK"/>
+                            <constraint firstItem="wus-ix-Mgf" firstAttribute="trailing" secondItem="Gcx-UR-ka1" secondAttribute="trailing" constant="20" id="Abp-Od-iHH"/>
+                            <constraint firstItem="Gcx-UR-ka1" firstAttribute="leading" secondItem="wus-ix-Mgf" secondAttribute="leading" constant="20" id="JCs-a9-KkT"/>
+                            <constraint firstItem="wus-ix-Mgf" firstAttribute="trailing" secondItem="DJI-j0-LLr" secondAttribute="trailing" constant="170" id="M8L-zM-GXL"/>
+                            <constraint firstItem="DJI-j0-LLr" firstAttribute="top" secondItem="Gcx-UR-ka1" secondAttribute="bottom" constant="40" id="NKC-BP-ue0"/>
+                            <constraint firstItem="YrP-v0-9hu" firstAttribute="leading" secondItem="wus-ix-Mgf" secondAttribute="leading" constant="20" id="OhK-kF-HJw"/>
+                            <constraint firstItem="wus-ix-Mgf" firstAttribute="trailing" secondItem="YrP-v0-9hu" secondAttribute="trailing" constant="20" id="Qoo-oS-cTs"/>
+                            <constraint firstItem="YrP-v0-9hu" firstAttribute="top" secondItem="wus-ix-Mgf" secondAttribute="top" constant="100" id="W8U-fc-cS4"/>
+                            <constraint firstItem="wus-ix-Mgf" firstAttribute="trailing" secondItem="pzf-Ih-hxF" secondAttribute="trailing" constant="30" id="dcb-HU-wmf"/>
+                            <constraint firstItem="pzf-Ih-hxF" firstAttribute="top" secondItem="DJI-j0-LLr" secondAttribute="bottom" constant="22" id="k31-AG-5B1"/>
+                            <constraint firstItem="pzf-Ih-hxF" firstAttribute="leading" secondItem="wus-ix-Mgf" secondAttribute="leading" constant="20" id="q43-ca-CHm"/>
+                            <constraint firstItem="DJI-j0-LLr" firstAttribute="leading" secondItem="wus-ix-Mgf" secondAttribute="leading" constant="170" id="qSS-Dy-30E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wus-ix-Mgf"/>
+                    </view>
+                    <connections>
+                        <outlet property="logInButton" destination="DJI-j0-LLr" id="6cy-hu-yca"/>
+                        <outlet property="passwordTextField" destination="65U-aO-aRC" id="tBY-2N-kNC"/>
+                        <outlet property="userNameTextField" destination="wfj-5D-ltt" id="42R-eV-GIX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmj-0u-LJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="-626"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JgT-Kp-PvA">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bi4-Dk-s2b" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MHx-Xw-K2s"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vun-HB-Fcx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -69,7 +163,7 @@
             <objects>
                 <tableViewController id="8xw-K1-lFl" customClass="BackEndViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9b-4k-dXn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,7 +245,7 @@
                     <tabBarItem key="tabBarItem" title="STORE-FRONT" image="circle" catalog="system" id="Fd8-RV-EeZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PX4-z0-brC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,7 +267,7 @@
                     <tabBarItem key="tabBarItem" title="BACK-END" image="circle" catalog="system" id="Rzb-Uj-K4D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FTp-y1-QyG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.65327805280685425" green="0.60668659210205078" blue="0.79836440086364746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

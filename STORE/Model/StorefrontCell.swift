@@ -13,6 +13,7 @@ import RealmSwift
 class StorefrontCell: UICollectionViewCell {
     
     var product: Results<Product>!
+    let data = DataLoader().productInformation
     
     @IBOutlet var name: UILabel!
     @IBOutlet var price: UILabel!

@@ -12,12 +12,9 @@ import RealmSwift
 class StoreFrontViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var product: Results<Product>!
-    var products: ProductInformation? = nil
-    let jsonService = JsonService()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData("data", "json")
         collectionView.reloadData()
     }
     
@@ -25,7 +22,6 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
         super.viewDidLoad()
         product = realm.objects(Product.self)
         self.collectionView.register(UINib(nibName: "StorefrontCell", bundle: nil), forCellWithReuseIdentifier: "StorefrontCell")
-        saveDataToRealm()
     }
     
     // MARK: UICollectionViewDataSource
@@ -36,6 +32,7 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorefrontCell", for: indexPath) as! StorefrontCell
+        
         
         let productInfo = product[indexPath.item]
         
@@ -53,30 +50,5 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.width)
     }
-    
-    func saveDataToRealm() {
-        
-        let prod: ProductInfo? = nil
-        
-        try! realm.write {
-            let productsRealm = Product()
-            
-            productsRealm.name = prod?.name ?? ""
-            productsRealm.price = prod?.price ?? ""
-            productsRealm.quantity = prod?.quantity ?? 0
-            
-            realm.add(productsRealm)
-        }
-    }
-    
-    func fetchData(_ forResource: String, _ withExtension: String) {
-        self.jsonService.request(forResource, withExtension, completion: { [weak self] (prods, error) in
-            prods.map({ (prod) in
-                self?.products = prods
-                self?.collectionView.reloadData()
-            })
-        })
-    }
-    
 }
 

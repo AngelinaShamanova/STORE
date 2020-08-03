@@ -13,12 +13,10 @@ class BackEndViewController: UITableViewController {
     
     // MARK: - Public Properties
     var product: Results<Product>!
-    var products: ProductInformation? = nil
-    let jsonService = JsonService()
-    let storageManager = StorageManager()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -35,12 +33,9 @@ class BackEndViewController: UITableViewController {
         return product.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BackendCell", for: indexPath) as! BackendCell
         
-        
-//        saveDataToRealm(productJson: products!, at: indexPath)
         let productInfo = product[indexPath.row]
         cell.configure(with: productInfo)
         
@@ -85,31 +80,6 @@ class BackEndViewController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: [delete, edit])
     }
-    
-    // MARK: - Fetch data
-    
-    func fetchData(_ forResource: String, _ withExtension: String) {
-        self.jsonService.request(forResource, withExtension, completion: { [weak self] (prods, error) in
-            prods?.productInfo.map({ (prod) in
-                self?.products = prods
-                self?.tableView.reloadData()
-            })
-        })
-    }
-    
-    func saveDataToRealm(productJson: ProductInformation, at indexPath: IndexPath) {
-         
-         try! realm.write {
-             let productsRealm = Product()
-             
-            productsRealm.name = productJson.productInfo[indexPath.row].name
-            productsRealm.price = productJson.productInfo[indexPath.row].price
-            productsRealm.quantity = productJson.productInfo[indexPath.row].quantity
-             
-             realm.add(productsRealm)
-         }
-     }
-    
 }
 
 // MARK: - Extension
