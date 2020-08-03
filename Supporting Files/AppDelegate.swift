@@ -37,11 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         guard realm.isEmpty else { return }
         
-        try! realm.write {
-            var productRealm = Product()
-            let data = DataLoader().productInformation
+        let data = DataLoader().productInformation
+        
+        for product in data {
             
-            for product in data {
+            try! realm.write {
+                let productRealm = Product()
+                
                 productRealm.name = product.name
                 productRealm.price = product.price
                 productRealm.quantity = product.quantity
@@ -50,5 +52,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
-

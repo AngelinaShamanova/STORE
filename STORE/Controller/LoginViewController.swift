@@ -11,21 +11,18 @@ import RealmSwift
 
 class LoginViewController: UIViewController {
     
-    // MARK: - IB Outlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var logInButton: UIButton!
     
-    
-    // MARK: - Private properties
     private let userName = "User"
     private let password = "12345"
-    
-    // MARK: - Public Properties
     
     override func viewDidLoad() {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 15
+        let data = DataLoader().productInformation
+        print(data.count)
     }
     
     // MARK: Navigation

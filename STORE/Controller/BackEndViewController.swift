@@ -11,7 +11,6 @@ import RealmSwift
 
 class BackEndViewController: UITableViewController {
     
-    // MARK: - Public Properties
     var product: Results<Product>!
     
     override func viewWillAppear(_ animated: Bool) {
