@@ -36,7 +36,11 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
         
         let productInfo = product[indexPath.item]
         
-        cell.configure(with: productInfo)
+        if productInfo.quantity != 0 {
+            cell.configure(with: productInfo)
+        } else {
+            cell.configureNotAvailableProduct(with: productInfo)
+        }
         
         return cell
     }
