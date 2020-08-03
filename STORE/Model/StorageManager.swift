@@ -32,12 +32,4 @@ class StorageManager {
             product.quantity = newQuantity
         }
     }
-    static func create(_ product: Product, from json: ProductInformation) {
-        try! realm.write {
-            product.name = json.name
-            product.price = json.price
-            product.quantity = json.quantity
-            realm.add(product)
-        }
-    }
 }
