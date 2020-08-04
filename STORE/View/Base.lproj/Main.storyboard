@@ -10,7 +10,7 @@
         <!--FRONT-STORE-->
         <scene sceneID="lhZ-GJ-P8Q">
             <objects>
-                <collectionViewController id="FIv-1G-Bzw" customClass="StoreFrontViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="StoreFrontViewController" id="FIv-1G-Bzw" customClass="StoreFrontViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="kA5-Pq-dFY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
         <!--Login View Controller-->
         <scene sceneID="Nr3-7f-bAK">
             <objects>
-                <viewController id="aK6-NJ-gOH" customClass="LoginViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="aK6-NJ-gOH" customClass="LoginViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jwl-Vw-fOA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
         <!--BACK-END-->
         <scene sceneID="iNv-Tk-xsp">
             <objects>
-                <tableViewController id="8xw-K1-lFl" customClass="BackEndViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BackEndViewController" id="8xw-K1-lFl" customClass="BackEndViewController" customModule="STORE" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I9b-4k-dXn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
