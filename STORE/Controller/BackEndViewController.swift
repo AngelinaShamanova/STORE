@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class BackEndViewController: UITableViewController {
-    
+
     var product: Results<Product>!
     
     override func viewDidLoad() {
@@ -55,7 +55,6 @@ class BackEndViewController: UITableViewController {
     // MARK: - Swipe Actions
     
     func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        
         let products = product[indexPath.row]
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in

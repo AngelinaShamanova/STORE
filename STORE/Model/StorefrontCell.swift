@@ -45,7 +45,6 @@ class StorefrontCell: UICollectionViewCell {
     }
     
     @IBAction func buyAction(_ sender: UIButton) {
-        
         let result = realm.objects(Product.self).first { $0.name == productName }!
         let newQt = result.quantity - 1
         quantity.text = "Количество: \(newQt)"

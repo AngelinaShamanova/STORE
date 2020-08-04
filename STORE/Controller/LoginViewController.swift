@@ -51,7 +51,6 @@ class LoginViewController: UIViewController {
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "logIn" else { return }
-        
     }
     
 }
