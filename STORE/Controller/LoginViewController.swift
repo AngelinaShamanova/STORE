@@ -23,11 +23,6 @@ class LoginViewController: UIViewController {
         logInButton.layer.cornerRadius = 15
     }
     
-    // MARK: Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "logIn" else { return }
-        
-    }
     // MARK: IB Actions
     @IBAction func logInPressed() {
         guard
@@ -52,6 +47,13 @@ class LoginViewController: UIViewController {
         showAlert(title: "Oops!",
                   message: "Your password is \(password)")
     }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "logIn" else { return }
+        
+    }
+    
 }
 
 // MARK: - Alert Controller

@@ -13,21 +13,26 @@ class BackEndViewController: UITableViewController {
     
     var product: Results<Product>!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         product = realm.objects(Product.self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateBack), name: NSNotification.Name("UpdateBack"), object: nil)
     }
     
+    @objc
+    func didUpdateBack(notification: NSNotification) {
+        let productName = notification.object as! String
+        let row = product.firstIndex(where: { $0.name == productName })!
+        tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .none)
+    }
+    
+    // MARK: IB Actions
     @IBAction func  addButtonPressed(_ sender: Any) {
         alertForAddAndUpdateProduct()
     }
     
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return product.count
     }
@@ -41,7 +46,7 @@ class BackEndViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -56,6 +61,8 @@ class BackEndViewController: UITableViewController {
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
             self.alertForAddAndUpdateProduct(products, completion: {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("UpdateFront"), object: products.name)
             })
             
         }
@@ -81,7 +88,7 @@ class BackEndViewController: UITableViewController {
     }
 }
 
-// MARK: - Extension
+// MARK: - Alert Controller
 extension BackEndViewController {
     
     private func alertForAddAndUpdateProduct(_ productName: Product? = nil, completion: (() -> Void)? = nil) {
@@ -149,5 +156,3 @@ extension BackEndViewController {
         present(alert, animated: true)
     }
 }
-
-
