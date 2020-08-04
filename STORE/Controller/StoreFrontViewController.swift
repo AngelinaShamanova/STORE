@@ -33,7 +33,6 @@ class StoreFrontViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StorefrontCell", for: indexPath) as! StorefrontCell
         
-        
         let productInfo = product[indexPath.item]
         
         if productInfo.quantity != 0 {

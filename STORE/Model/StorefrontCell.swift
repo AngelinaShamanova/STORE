@@ -38,6 +38,8 @@ class StorefrontCell: UICollectionViewCell {
     
     @IBAction func buyAction(_ sender: UIButton) {
         
+        buy.addTarget(self, action: #selector(buyAction(_:)), for: .touchUpInside)
+        
         product = realm.objects(Product.self)
         
         for result in product {
@@ -54,4 +56,5 @@ class StorefrontCell: UICollectionViewCell {
             } else { return }
         }
     }
+    
 }
