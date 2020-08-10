@@ -27,7 +27,7 @@ class DataLoader {
                 
                 self.productInformation = dataFromJson
             } catch {
-                print(error)
+                print("Error!")
             }
         }
     }
